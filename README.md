@@ -1,0 +1,4 @@
+Mastermind
+==========
+
+A Mastermind solver.
