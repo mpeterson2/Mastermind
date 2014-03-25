@@ -56,7 +56,6 @@ class Code {
       }
     }
     
-    
     // Return the number of close matches.
     return matching;
   }
