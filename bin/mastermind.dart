@@ -47,7 +47,6 @@ void main(List<String> args) {
   for(int i=0; i<10; i++) {
     // Guess a number.
     Code guess = cb.guessNumber();
-    print("Guess #${i + 1}: $guess");
     
     // If the number was guessed, tell the user.
     if(guess == userCode) {
@@ -61,6 +60,9 @@ void main(List<String> args) {
     else {
       int numCorrect = userCode.numCorrect(guess);
       int numClose = userCode.numClose(guess);
+      print("Guess #${i + 1}: $guess.");
+      print("\tCorrect hits: $numCorrect");
+      print("\tClose hits  : $numClose");
       
       cb.giveFeedback(numCorrect, numClose);
     }
