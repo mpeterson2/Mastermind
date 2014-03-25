@@ -32,6 +32,9 @@ void main(List<String> args) {
     }
   }
   
+  // userCode is the code the program is trying to crack.
+  // This is only used to see if the guessed code is correct, and to provide
+  // feedback to the CodeBreaker, so the user doesn't have to do it.
   Code userCode = new Code(inputCode);
   
   // Create the object that will break the code.
