@@ -17,8 +17,33 @@ class Permutation {
    * 
    * I had a bit of help on this one from stackoverflow.
    * (http://stackoverflow.com/questions/22631345/how-to-make-a-list-of-lists-of-n-numbers-including-x-z-numbers#22631911)
+   * 
+   * This is the second implementation of this. It is much faster, but less readable.
    */
-  static List<List<int>> _actualPermutate(int maxNum, int maxElements) {
+  static List<List<int>> _actualPermutate(int maxNum, int size) {
+    // create a list of nums [0,1,2,3]
+    final nums = new List.generate(maxNum, (int i) => i);
+  
+    // init result with a list of nums [[0],[1],[2],[3]]
+    Iterable<List> result = nums.map((int i) => [i]);
+    for (int i = 1; i < size; i++) {
+      // every step adds a new element to the result
+      // [[0],[1],...] becomes [[0,0],[0,1],[1,0],[1,1],...]
+      result = result.expand((List<int> e) => nums.map((int n) => e.toList()..add(n)));
+    }
+    return result;
+  }
+  
+  /**
+   * The actual permutating goes on here.
+   * 
+   * I had a bit of help on this one from stackoverflow.
+   * (http://stackoverflow.com/questions/22631345/how-to-make-a-list-of-lists-of-n-numbers-including-x-z-numbers#22631911)
+   * 
+   * This is the first implementation of this that I had. It worked, but it wasn't as fast.
+   */
+  @deprecated
+  static List<List<int>> _actualPermutateOld(int maxNum, int maxElements) {
     // Get the number of element in the list and create it.
     int resultCount = pow(maxNum, maxElements);
     List<List<int>> permutations = new List(resultCount);

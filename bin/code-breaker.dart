@@ -89,8 +89,10 @@ class CodeBreaker {
   /**
    * Generates every possible code in the problem.
    * 
-   * This is deprecated because there is no way to easily change
-   * the max values or size of the code.
+   * This is how I had originally generated all the numbers. It worked,
+   * but only for codes with a length of 4. I've ran into this situation
+   * before, but I've never looked into it more. So I posted a question on
+   * stackoverflow, and created my Permutation class from their help.
    * 
    */
   @deprecated
