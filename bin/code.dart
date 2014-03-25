@@ -38,60 +38,24 @@ class Code {
   int numClose(Code other) {
     int matching = 0;
     
-    // Lists to hold what has already been counted, so we can skip it.
-    List<int> thisCounted = new List<int>();
-    List<int> otherCounted = new List<int>();
-    
-    // Be sure no correct pos and digits are added.
+    // Compare each number in this and other to see if we have a match.
     for(int i=0; i<length; i++) {
-      if(this[i] == other[i]) {
-        thisCounted.add(i);
-        otherCounted.add(i);
-      }
-    }
-    
-    // Check for matching digits.
-    iloop:
-    for(int i=0; i<length; i++) {
-      
-      jloop:
       for(int j=0; j<length; j++) {
         
-        // Be sure that this number hasn't been counted for the other Code.
-        for(int k in otherCounted) {
-          // If it has been, continue at the jloop.
-          if(k == j)
-            continue jloop;
-        }
-        
-        // Be sure that this number hasn't been counted for the this Code.
-        for(int k in thisCounted) {
-          // If it has been, continue at the iloop.
-          if(k == i)
-            continue iloop;
-        }
-        
-        // Now we know that these numbers haven't been counted,
-        // so check if it's a match.
+        // If we have a match.
         if(this[i] == other[j]) {
-          // If i == j, this is a correct match, not a close match.
-          // So count it (so it won't show up again) and continue.
-          if(i == j) {
-            thisCounted.add(this[i]);
-            otherCounted.add(other[j]);
-            continue;
+          // Do not count correct matches.
+          if(this[i] == other[i] || this[j] == other[j]) {
+            break;
           }
-  
-          // Otherwise, we know this is a close match, so count it and break
-          // so we don't count it again.
-          thisCounted.add(i);
-          otherCounted.add(j);
-          matching++;
-          break;
+          // Otherwise, increment the matches.
+          else {
+            matching++;
+          }
         }
-        
       }
     }
+    
     
     // Return the number of close matches.
     return matching;
