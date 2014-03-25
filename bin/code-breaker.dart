@@ -9,14 +9,14 @@ class CodeBreaker {
   int maxNum;
   int codeLength;
   Code lastCode;
-  bool first;
+  bool firstGuess;
   
   
   /**
    * Creates a CodeBreaker and generates the possible codes.
    */
   CodeBreaker(this.maxNum, this.codeLength) {
-    first = true;
+    firstGuess = true;
     _generatePossibleCodes();
   }
   
@@ -26,11 +26,12 @@ class CodeBreaker {
   Code guessNumber() {
     
     // If it is the first code, pick the recommended code to start with.
-    if(first) {
+    if(firstGuess) {
       // It's recommended to start out with [0, 0, 1, 1] for the normal problem,
-      // which is number 7 in the array.
+      // which is number 7 in the array. It seems to work well enough with all
+      // the lengths as well.
       lastCode = possibleCodes[7];
-      first = false;
+      firstGuess = false;
     }
     // Otherwise, pick the middle code.
     else {
