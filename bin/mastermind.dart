@@ -47,6 +47,7 @@ void main(List<String> args) {
   for(int i=0; i<10; i++) {
     // Guess a number.
     Code guess = cb.guessNumber();
+    print("Guess #${i + 1}: $guess");
     
     // If the number was guessed, tell the user.
     if(guess == userCode) {

@@ -46,7 +46,7 @@ class Code {
         if(this[i] == other[j]) {
           // Do not count correct matches.
           if(this[i] == other[i] || this[j] == other[j]) {
-            break;
+            continue;
           }
           // Otherwise, increment the matches.
           else {
