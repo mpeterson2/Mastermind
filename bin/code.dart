@@ -37,22 +37,36 @@ class Code {
    */
   int numClose(Code other) {
     int matching = 0;
+
+    // Hold the already counted hits.
+    List<int> countedThis = new List<int>();
+    List<int> countedOther = new List<int>();
     
-    // Compare each number in this and other to see if we have a match.
+
+    // Be sure that we aren't counting any correct hits.
     for(int i=0; i<length; i++) {
-      for(int j=0; j<length; j++) {
-        
-        // If we have a match.
-        if(this[i] == other[j]) {
-          // Do not count correct matches.
-          if(this[i] != other[i] || this[j] != other[j]) {
-            matching++;
-          }
-        }
+      if(this[i] == other[i]) {
+        countedThis.add(i);
+        countedOther.add(i);
       }
     }
     
-    // Return the number of close matches.
+    //Check each digit in the 2 codes against each other.
+    for(int i=0; i<length; i++) {
+      for(int j=0; j<length; j++) {
+        
+        // If we have a match and it has not already been counted.
+        if(this[i] == other[j] &&
+           !countedThis.contains(i) && !countedOther.contains(j)) {
+          // Count it.
+          countedThis.add(i);
+          countedOther.add(j);
+          matching++;
+        }
+        
+      }
+    }
+    
     return matching;
   }
 
