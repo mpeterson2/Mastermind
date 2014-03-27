@@ -4,8 +4,6 @@ part of Mastermind;
  * A list of numbers that represent a code.
  */
 class Code {
-  // The max value a digit in the code can be.
-  static final int MAX_VAL = 5;
   
   List<int> digits;
 

@@ -30,7 +30,10 @@ class CodeBreaker {
       // It's recommended to start out with [0, 0, 1, 1] for the normal problem,
       // which is number 7 in the array. It seems to work well enough with all
       // the lengths as well.
-      lastCode = possibleCodes[7];
+      if(possibleCodes.length >= 7)
+        lastCode = possibleCodes[7];
+      else
+        lastCode = possibleCodes[possibleCodes.length ~/ 2];
       firstGuess = false;
     }
     // Otherwise, pick the middle code.
