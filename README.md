@@ -24,6 +24,4 @@ Guess #4: 5, 1, 2, 5.
 	Correct hits: 1
 	Close hits  : 1
 Guessed it in 5 tries. The code was: 1, 3, 4, 5
-
-
 ```
