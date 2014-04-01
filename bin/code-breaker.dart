@@ -102,12 +102,12 @@ class CodeBreaker {
   void _generatePossibleCodesOld() {
     possibleCodes = new List<Code>();
     
-    // Loop through MAX_VAL times, 4 times, in order to create a permutation of
+    // Loop through maxNum times, 4 times, in order to create a permutation of
     // 4 elements, with values from 0 to MAX_VAL.
-    for(int i=0; i<=Code.MAX_VAL; i++) {
-      for(int j=0; j<Code.MAX_VAL; j++) {
-        for(int k=0; k<Code.MAX_VAL; k++) {
-          for(int l=0; l<Code.MAX_VAL; l++) {
+    for(int i=0; i<=maxNum; i++) {
+      for(int j=0; j<maxNum; j++) {
+        for(int k=0; k<maxNum; k++) {
+          for(int l=0; l<maxNum; l++) {
             Code c = new Code([i, j, k, l]);
             possibleCodes.add(c);
           }
