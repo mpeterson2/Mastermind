@@ -26,6 +26,8 @@ Guess #4: 5, 1, 2, 5.
 Guessed it in 5 tries. The code was: 1, 3, 4, 5
 ```
 
+## Max Value
+
 The default value for the max number is 6, although you can change this. You can do this using the argument `--max <int>` or `-m <int>` before the code.
 
 Here's an example with the maximum value of `4` and the code of `1, 4, 2, 1`:
