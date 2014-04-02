@@ -3,6 +3,24 @@ Mastermind
 
 A Mastermind solver.
 
+# Setup
+
+## Install Dart
+
+To use this application, you must have [Dart](https://www.dartlang.org/) installed. In order to do this, follow these [instructions](https://www.dartlang.org/tools/download.html).
+
+- Download the [Dart bundle](https://www.dartlang.org/tools/download.html).
+- Extract the contents to any location on your disk.
+- Add the Dart SDK to your path. The SDK is found in the folder you extracted.
+- Dart should now be installed.
+
+## Setup the application
+
+- Download the repository to any location.
+- Change directories to the root of the project.
+- Run `pub get` to install the dependencies.
+- You should be able to run it now.
+
 # How to use
 
 You can run it as a Dart application by running the file `bin/mastermind.dart`, and including your code separated by spaces afterwords.
