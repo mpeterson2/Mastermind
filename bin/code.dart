@@ -1,24 +1,17 @@
 part of Mastermind;
 
-/**
- * A list of numbers that represent a code.
- */
 class Code {
   
   List<int> digits;
 
-  /**
-   * Create a Code using a list of digits.
-   */
   Code(this.digits);
   
   /**
    * Get the number of matching digits and positions from a different Code.
    */
-  int numCorrect(Code other) {
+  int matchCorrect(Code other) {
     int matching = 0;
     
-    // Loop through length times to see what matches we have.
     for(int i=0; i<length; i++) {
       // If this Code at i is equal to other Code at i, there is a match.
       if(this[i] == other[i])
@@ -33,10 +26,9 @@ class Code {
    * Get the number of matching digits, minus the correct digits
    * and positions, from a different Code.
    */
-  int numClose(Code other) {
+  int matchClose(Code other) {
     int matching = 0;
 
-    // Hold the already counted hits.
     List<int> countedThis = new List<int>();
     List<int> countedOther = new List<int>();
     
@@ -49,14 +41,11 @@ class Code {
       }
     }
     
-    //Check each digit in the 2 codes against each other.
+    // Get all the close matches.
     for(int i=0; i<length; i++) {
       for(int j=0; j<length; j++) {
-        
-        // If we have a match and it has not already been counted.
         if(this[i] == other[j] &&
            !countedThis.contains(i) && !countedOther.contains(j)) {
-          // Count it.
           countedThis.add(i);
           countedOther.add(j);
           matching++;
@@ -68,37 +57,23 @@ class Code {
     return matching;
   }
 
-  /**
-   * Get the length of this Code.
-   */
   int get length {
     return digits.length;
   }
   
-  /**
-   * Get a number of this Code at i.
-   */
   operator [](int i) {
     return digits[i];
   }
   
-  /**
-   * Check whether or not this Code equals another Code.
-   */
   operator ==(Code other) {
-    // Run through and check for any differences.
     for(int i=0; i<length; i++) {
       if(this[i] != other[i])
         return false;
     }
     
-    // If no differences are found, there's a match.
     return true;
   }
   
-  /**
-   * Display the Code in a really fancy way in the console.
-   */
   String toString() {
     String str = "";
     

@@ -1,7 +1,6 @@
 library Mastermind;
 
 import "dart:io";
-import "dart:math";
 import "package:args/args.dart";
 
 part "code.dart";
@@ -16,28 +15,19 @@ void main(List<String> args) {
   // Print the usage if it is requested.
   requestHelp(parser, argResults);
   
-  // Get the code and the max value of the code.
   int maxValue = getMaxValue(argResults);
   List<int> inputCode = getCode(argResults, maxValue);
   
-  // userCode is the code the program is trying to crack.
-  // This is only used to see if the guessed code is correct, and to provide
-  // feedback to the CodeBreaker, so the user doesn't have to do it.
-  Code userCode = new Code(inputCode);
-  
-  // Create the object that will break the code.
-  CodeBreaker cb = new CodeBreaker(maxValue, userCode.length);
-  
-  // This will become true when the code is cracked.
+  Code codeToBreak = new Code(inputCode);
+  CodeBreaker codeBreaker = new CodeBreaker(maxValue, codeToBreak.length);
   bool guessed = false;
   
-  // Try 10 times at the most to guess the code.
+  // Try to guess the code in under 10 times.
   for(int i=0; i<10; i++) {
-    // Guess a number.
-    Code guess = cb.guessNumber();
+    Code guess = codeBreaker.guessNumber();
     
     // If the number was guessed, tell the user.
-    if(guess == userCode) {
+    if(guess == codeToBreak) {
       print("Guessed it in ${i+1} tries. The code was: $guess");
       guessed = true;
       break;
@@ -46,13 +36,13 @@ void main(List<String> args) {
     // If the number was not guessed, give the CodeBreaker
     // feedback and try again.
     else {
-      int numCorrect = userCode.numCorrect(guess);
-      int numClose = userCode.numClose(guess);
+      int numCorrect = codeToBreak.matchCorrect(guess);
+      int numClose = codeToBreak.matchClose(guess);
       print("Guess #${i + 1}: $guess.");
       print("\tCorrect hits: $numCorrect");
       print("\tClose hits  : $numClose");
       
-      cb.giveFeedback(numCorrect, numClose);
+      codeBreaker.giveFeedback(numCorrect, numClose);
     }
   }
   
