@@ -12,6 +12,6 @@ class Permutation {
       // [[0],[1],...] becomes [[0,0],[0,1],[1,0],[1,1],...]
       result = result.expand((List<int> e) => nums.map((int n) => e.toList()..add(n)));
     }
-    return result;
+    return result.toList();
   }
 }
