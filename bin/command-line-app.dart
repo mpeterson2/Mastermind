@@ -11,11 +11,27 @@ class CommandLineApp {
   Code codeToBreak;
   
   CommandLineApp(List<String> args) {
+    // Get the input.
     _setupParser();
     _results = _parser.parse(args);
     _requestHelp();
     maxValue = _getMaxValue();
     codeToBreak = _getCode();
+    
+    // Start solving everything.
+    Mastermind mm = new Mastermind(codeToBreak, maxValue);
+    
+    // Show the results.
+    for(int i=0; i<mm.guesses.length - 1; i++) {
+      print("Guess #${i+1}: ${mm.guesses[i]}");
+      print("\t Correct Hits: ${mm.matchCorrects[i]}");
+      print("\t Close Hits: ${mm.matchCloses[i]}\n");
+    }
+    
+    if(mm.guessed) {
+      print("Guessed the code in ${mm.guesses.length} tries.");
+      print("The code was: ${mm.answer}");
+    }
   }
   
   void _setupParser() {
