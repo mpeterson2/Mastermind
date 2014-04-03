@@ -21,9 +21,9 @@ class CodeBreaker {
     
     if(firstGuess) {
       // It's recommended to start out with [0, 0, 1, 1] for the normal problem,
-      // which is number 8 in the array.
+      // which is number 7 in the array.
       if(possibleCodes.length >= 7)
-        lastCode = possibleCodes[8];
+        lastCode = possibleCodes[7];
       else
         lastCode = possibleCodes[possibleCodes.length ~/ 2];
       firstGuess = false;

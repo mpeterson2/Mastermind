@@ -2,3 +2,4 @@ name: mastermind
 description: A sample command-line application
 dependencies:
   args: any
+  unittest: any
