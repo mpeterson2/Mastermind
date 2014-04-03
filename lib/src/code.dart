@@ -77,7 +77,6 @@ class Code {
   String toString() {
     String str = "";
     
-    // Add the value, a comma, and a space for each part of the code.
     for(int d in digits) {
       str += "$d, ";
     }
