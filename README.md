@@ -67,3 +67,7 @@ Guess #4: 2, 1, 2, 3.
 Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 ```
+
+# Tests
+
+To run the tests, simple run `dart tests/test.dart`.
