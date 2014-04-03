@@ -3,9 +3,9 @@ Mastermind
 
 A Mastermind solver.
 
-# Setup
+## Setup
 
-## Install Dart
+### Install Dart
 
 To use this application, you must have [Dart](https://www.dartlang.org/) installed. In order to do this, follow these [instructions](https://www.dartlang.org/tools/download.html).
 
@@ -14,14 +14,14 @@ To use this application, you must have [Dart](https://www.dartlang.org/) install
 - Add the Dart SDK to your path. The SDK is found in the folder you extracted.
 - Dart should now be installed.
 
-## Setup the application
+### Setup the application
 
 - Download the repository to any location.
 - Change directories to the root of the project.
 - Run `pub get` to install the dependencies.
 - You should be able to run it now.
 
-# How to use
+## How to use
 
 You can run it as a Dart application by running the file `bin/mastermind.dart`, and including your code separated by spaces afterwords.
 
@@ -44,7 +44,7 @@ Guess #4: 5, 1, 2, 5.
 Guessed it in 5 tries. The code was: 1, 3, 4, 5
 ```
 
-## Max Value
+### Max Value
 
 The default value for the max number is 6, although you can change this. You can do this using the argument `--max <int>` or `-m <int>` before the code.
 
@@ -67,3 +67,7 @@ Guess #4: 2, 1, 2, 3.
 Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 ```
+
+## Tests
+
+To run the tests, simple run `dart tests/test.dart`.
