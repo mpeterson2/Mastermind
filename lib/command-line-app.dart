@@ -1,3 +1,5 @@
+library CommandLineApp;
+
 import "dart:io";
 import "package:args/args.dart";
 import "package:mastermind/mastermind.dart";

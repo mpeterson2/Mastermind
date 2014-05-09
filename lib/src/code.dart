@@ -6,6 +6,11 @@ class Code {
 
   Code(this.digits);
   
+  Code.fromStr(String str) {
+    List<String> digitStrs = str.split(" ");
+    digits = digitStrs.map((String s) => int.parse(s)).toList();    
+  }
+  
   /**
    * Get the number of matching digits and positions from a different Code.
    */
