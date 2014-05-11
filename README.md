@@ -23,6 +23,8 @@ To use this application, you must have [Dart](https://www.dartlang.org/) install
 
 ## How to use
 
+### Command Line App
+
 You can run it as a Dart application by running the file `bin/mastermind.dart`, and including your code separated by spaces afterwords.
 
 Here's an example with the code `0, 0, 1, 2`:
@@ -44,7 +46,7 @@ Guess #4: 5, 1, 2, 5.
 Guessed it in 5 tries. The code was: 1, 3, 4, 5
 ```
 
-### Max Value
+#### Max Value
 
 The default value for the max number is 6, although you can change this. You can do this using the argument `--max <int>` or `-m <int>` before the code.
 
@@ -67,6 +69,20 @@ Guess #4: 2, 1, 2, 3.
 Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 ```
+
+### Server App
+
+#### Dartium
+
+- For Dartium, uncomment line 20 and comment out line 21 in `lib/server/server-app.dart`
+- Run `bin/dart-server.dart`
+- Navagate to `localhost:9000`
+
+#### Other browsers
+
+ - For other browsers, supported by Dart, run `pub build` over the directory containing `pubspec.yaml`. This will compile the Dart code into JavaScript.
+ - Run `dart bin/mastermind-server.dart`.
+ - Navagate to `localhost:9000`
 
 ## Tests
 
