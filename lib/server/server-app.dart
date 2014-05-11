@@ -17,7 +17,9 @@ class MasterMindServerApp {
     if(uri == "/")
       uri = "/index.html";
     
-    File file = new File("../web" + uri);
+    //File file = new File("../web" + uri);
+    File file = new File("build/web" + uri);
+    print(file.absolute.path);
     
     file.exists().then((bool found) {
       if(found) {
