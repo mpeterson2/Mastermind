@@ -79,7 +79,7 @@ Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 #### Other browsers
 
- - For other browsers, supported by Dart, run `pub build` over the directory containing `pubspec.yaml`. This will compile the Dart code into JavaScript.
+ - For other browsers, [supported by Dart](https://www.dartlang.org/support/faq.html#q-what-browsers-do-you-support-as-javascript-compilation-targets), run `pub build` over the directory containing `pubspec.yaml`. This will compile the Dart code into JavaScript.
  - Run `dart bin/mastermind-server.dart`.
  - Navagate to `localhost:9000`
 
