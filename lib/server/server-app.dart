@@ -2,9 +2,19 @@ part of ServerApp;
 
 class MasterMindServerApp {
   
-  MasterMindServerApp() {
-    print("Starting server on port 9000");
-    HttpServer.bind("localhost", 9000)
+  String pathToFiles;
+  
+  MasterMindServerApp({int port: 9000, bool useDart: false}) {
+    
+    if(useDart) {
+      pathToFiles = "web";
+    }
+    else {
+      pathToFiles = "build/web";
+    }
+    
+    print("Starting server on port $port");
+    HttpServer.bind("localhost", port)
       .then((HttpServer server) {
       Router router = new Router(server)
         ..serve("/guess").listen(_guessCode)
@@ -17,9 +27,8 @@ class MasterMindServerApp {
     if(uri == "/")
       uri = "/index.html";
     
-    //File file = new File("../web" + uri);
-    File file = new File("build/web" + uri);
-    print(file.absolute.path);
+    File file = new File(pathToFiles + uri);
+    print(file.absolute);
     
     file.exists().then((bool found) {
       if(found) {
