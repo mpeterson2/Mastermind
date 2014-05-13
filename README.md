@@ -74,7 +74,7 @@ Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 #### Dartium
 
-- Run `bin/dart-server.dart -d`
+- Run `bin/mastermind-server.dart -d`
 - Navagate to `localhost:9000`
 
 #### Other browsers
