@@ -10,7 +10,7 @@ void main() {
  * Be sure solutions are unique and match each other correctly.
  */
 void testSolutions() {
-  List<List<int>> allSolutionsList = Permutation.permutate(5, 4);
+  List<List<int>> allSolutionsList = permutate(5, 4);
   List<Code> allSolutions = new List<Code>();
   for(List<int> list in allSolutionsList) {
     allSolutions.add(new Code(list));
@@ -50,7 +50,7 @@ void testSolutions() {
  * Be sure every code can be broken in 10 tries.
  */
 void testBreaker() {
-  List<List<int>> allCodeList = Permutation.permutate(5, 4);
+  List<List<int>> allCodeList = permutate(5, 4);
   
   for(List<int> codeList in allCodeList) {
     Code codeToBreak = new Code(codeList);

@@ -60,7 +60,7 @@ class CodeBreaker {
   void _generatePossibleCodes() {
     // Generate a permutation in the form of a list of list of ints. 
     possibleCodes = new List<Code>();
-    List<List<int>> lists = Permutation.permutate(maxNum, codeLength);
+    List<List<int>> lists = permutate(maxNum, codeLength);
     
     // Create the Codes out of the list.
     for(List<int> list in lists) {
