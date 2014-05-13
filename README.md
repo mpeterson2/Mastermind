@@ -74,8 +74,7 @@ Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 #### Dartium
 
-- For Dartium, uncomment line 20 and comment out line 21 in `lib/server/server-app.dart`
-- Run `bin/dart-server.dart`
+- Run `bin/dart-server.dart -d`
 - Navagate to `localhost:9000`
 
 #### Other browsers
