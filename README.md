@@ -25,7 +25,7 @@ To use this application, you must have [Dart](https://www.dartlang.org/) install
 
 ### Command Line App
 
-You can run it as a Dart application by running the file `bin/mastermind.dart`, and including your code separated by spaces afterwords.
+You can run it as a Dart application by running `dart bin/mastermind.dart`, and including your code separated by spaces afterwords.
 
 Here's an example with the code `0, 0, 1, 2`:
 
@@ -74,7 +74,7 @@ Guessed it in 5 tries. The code was: 1, 4, 2, 1
 
 #### Dartium
 
-- Run `bin/mastermind-server.dart -d`
+- Run `dart bin/mastermind-server.dart -d`
 - Navagate to `localhost:9000`
 
 #### Other browsers
